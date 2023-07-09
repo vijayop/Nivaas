@@ -1,0 +1,24 @@
+{% extends 'panel/admin_panel.html' %}
+
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <h5>number plate:{{ object.number_plate }}</h5>
+        </div>
+        <div class="form-group">
+            <h5>arrival Time : {{ object.arrival_time }}</h5>
+        </div>
+        <div class="form-group">
+            <h5> deprature time : {{ object.departure_time }}</h5>
+        </div>
+
+        <br>
+        <h3>Do you want to Delete this Vehicle ?</h3>
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'vehicle' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}

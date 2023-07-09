@@ -1,0 +1,19 @@
+{% extends 'panel/admin_panel.html' %}
+
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>Notice : </label>
+            <textarea class="form-control" name ="e_notice" id="e_notice" rows="3">{{ e_notice.e_notice }}</textarea>
+        </div>
+
+        <br>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="{% url 'emergency_notice_admin' %}" class="btn btn-secondary">Go back</a>
+    </form>
+</div>
+
+{% endblock %}

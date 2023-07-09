@@ -1,0 +1,38 @@
+{% extends 'panel/admin_panel.html' %}
+{% block content %}
+    <div class="container">
+
+        <h2 style="text-align: center;"> Common plot booking queries </h2>
+
+        <hr>
+
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">resident name</th>
+                <th scope="col">email</th>
+                <th scope="col">ph. no.</th>
+                <th scope="col">event</th>
+                <th scope="col">from</th>
+                <th scope="col">till</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for query in queries%}
+              <tr>
+                <th scope="row">{{query.id}}</th>
+                <td>{{query.r_name}}</td>
+                <td>{{query.email}}</td>
+                <td>{{query.number}}</td>
+                <td>{{query.event_name}}</td>
+                <td>{{query.starting_date}}</td>
+                <td>{{query.ending_date}}</td>
+                <td><a href="{% url 'delete_common_plot_booking' query.id %}" class="btn btn-danger">Delete</a></td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+    </div>   
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'panel/admin_panel.html' %}
+
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>Emergency Notice : </label>
+            <textarea class="form-control" name ="enotice" id="enotice" rows="3"></textarea>
+        </div>
+
+        <br>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

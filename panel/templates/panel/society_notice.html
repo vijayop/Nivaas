@@ -1,0 +1,31 @@
+{% extends 'panel/user_panel.html' %}
+
+{% block content %}
+    <div class = "container">
+        <h2 style="text-align: center;">Society Notices</h2>
+        <hr>
+
+        <div class="row">
+            {% for notice in notices %}
+                <div class="col-md-12">
+                    <div class="card" style="margin-top: 10px;margin-bottom: 10px;">
+                        <div class="card-body">
+                            <div class = "card-title" style="text-align: right;">{{ notice.datetime }}</div>
+                            <div class = "card-text"><h5>{{ notice.notice }}</h5></div>  
+                            <!-- act class is used for javascript purposes , For adding the clikcking mechanism ,
+                                 id is also used for javascript purposes-->
+                        </div>
+                    </div> 
+                </div>
+                
+            {% endfor %}
+        </div>
+        
+    </div>
+
+<!--
+    {% for notice in notices %}
+        <h3>Notice : {{ notice.notice }}</h3>
+        <h3>datetime : {{notice.dattime}}</h3>
+    {% endfor %} -->
+{% endblock %}

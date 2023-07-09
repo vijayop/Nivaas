@@ -1,0 +1,27 @@
+{% extends 'panel/admin_panel.html' %}
+
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <h5>resident name :{{ object.r_name }}</h5>
+        </div>
+        <div class="form-group">
+            <h5>Email : {{ object.email }}</h5>
+        </div>
+        <div class="form-group">
+            <h5> ph. no : {{ object.number }}</h5>
+        </div>
+        <div class="form-group">
+            <h5>shop category : {{ object.shop_category }}</h5>
+        </div>
+
+        <br>
+        <h3>Do you want to Delete this Booking ?</h3>
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="{% url 'shop_admin' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}
